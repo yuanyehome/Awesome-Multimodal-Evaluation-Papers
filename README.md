@@ -154,6 +154,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[MMWorld: Towards Multi-Discipline Multi-Faceted World Model Evaluation in Videos](https://openreview.net/forum?id=mDRmX8IlBI)** (*2025*) `ICLR`
 - **[WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](https://openreview.net/forum?id=YxsfxAvJv4)** (*2026*) `ICLR`
 - **[EventBench: Towards Event-Oriented Long Video Understanding](https://arxiv.org/abs/2406.14129)** (*2024*) `arXiv`
+- **[GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](https://arxiv.org/abs/2603.24329)** (*2026*) `ACL`
 
 #### 📋 Complex Decision-Making and Planning
 
