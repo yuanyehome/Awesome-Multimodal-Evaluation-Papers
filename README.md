@@ -118,6 +118,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[Animal-Bench: Benchmarking Multimodal Video Models for Animal-Centric Video Understanding](https://proceedings.neurips.cc/paper_files/paper/2024/hash/8fa604a81e5a236e2f38e917109571a3-Abstract-Conference.html)** (*2024*) `NeurIPS`
 - **[ChronoMagic-Bench: A Benchmark for Metamorphic Evaluation of Text-to-Time-Lapse Video Generation](https://arxiv.org/abs/2406.18522)** (*2024*) `NeurIPS`
 - **[MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](https://openreview.net/forum?id=7x6TxVIarj)** (*2026*) `ICLR`
+- **[StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs](https://arxiv.org/abs/2505.20139)** (*2025*) `TMLR`
 - **[Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](https://arxiv.org/abs/2512.16899)** (*2025*) `arXiv`
 - **[See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models (AV-SpeakerBench)](https://arxiv.org/abs/2512.02231)** (*2025*) `arXiv`
 - **[AVI-Bench: Toward Human-Like Audio-Visual Intelligence of Omni-MLLMs](https://arxiv.org/abs/2606.07643)** (*2026*) `arXiv`
