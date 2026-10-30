@@ -15,9 +15,9 @@
 
 This repository tracks research papers on **Multimodal Foundation Model Evaluations** and serves as the companion paper list for the survey **"A Comprehensive Survey of Multimodal Foundation Model Evaluation: A Hierarchical Perspective and Extensive Applications."**
 
-The survey uses a three-layer hierarchy as an analytical pathway rather than a universal difficulty ranking. **Fundamental competencies** and **higher-order intelligence** group capability evidence, while **real-world applications** frame how those capabilities are tested under cross-cutting deployment requirements and domain-specific constraints. This README is synchronized with the survey manuscript. Following the July 2026 update, the corpus figures are regenerated directly from the manuscript's cited references, and the representative benchmark comparison uses a July 2026 snapshot.
+The survey uses a three-layer hierarchy as an analytical pathway rather than a universal difficulty ranking. **Fundamental competencies** and **higher-order intelligence** group capability evidence, while **real-world applications** frame how those capabilities are tested under cross-cutting deployment requirements and domain-specific constraints. Its information-fusion perspective connects each layer to observable evidence use, shortcut risks, and the validation still needed for deployment. The survey presents a documented search-and-selection flow, category and signal counts, a worked fusion-gain example, and a comparison of benchmark designs.
 
-The maintained corpus is built from academic indexes, venue proceedings, arXiv, DBLP, Google Scholar, ACL Anthology, OpenReview, CVF, ACM, and IEEE Xplore, followed by backward and forward citation tracing from recent surveys and representative benchmark papers.
+The maintained collection draws on academic indexes, venue proceedings, arXiv, DBLP, Google Scholar, ACL Anthology, OpenReview, CVF, ACM, and IEEE Xplore, supplemented by citation tracing from surveys and benchmark papers. The manuscript distinguishes core evaluation works from unimodal comparators and contextual sources. The search catalogue and the detailed synthesis have distinct membership and counting units, documented in the accompanying data.
 
 ## 📑 Table of Contents
 
@@ -33,24 +33,43 @@ The maintained corpus is built from academic indexes, venue proceedings, arXiv, 
 
 ## 🧭 Survey Snapshot
 
-### Corpus Snapshot
+### Reference Inventory and Coverage
 
-The publication-year figures are regenerated from the manuscript's compiled references after the July 2026 update, so they reflect the sources actually cited in the paper rather than a fixed external snapshot. In this active cited corpus, 2025 works now outnumber 2024 works, while the partial 2026 count is roughly 60% of the 2025 count. The 2026 additions span visual reasoning, audio reasoning, streaming video understanding, planning safety, medical evaluation, biomolecular modeling, industrial anomaly detection, and hallucination analysis.
+The documented search identified 3,634 records (3,250 arXiv query records and 384 maintained-bibliography records). Consolidating 339 duplicates yielded 3,295 studies for screening: 2,289 evaluation-catalogue records, 83 supporting references, and 923 exclusions. The detailed synthesis uses 175 representative evaluation resources; the other 2,114 eligible records remain in the catalogue. The paper cites 258 works in total, including 14 unimodal comparators and 69 contextual sources.
 
-### Representative Benchmark Snapshot
+The indexed queries cover initial arXiv submission dates from 1 January 2018 through 31 July 2026; abstracts and publication metadata reflect the records available at retrieval on 30 October 2026. Exact queries, source links, duplicate relationships, screening reasons, and synthesis membership are supplied with the paper.
 
-The manuscript also reports a July 2026 benchmark snapshot for positioning representative benchmark families. Citation counts are used only as a rough adoption signal, and the model / score entries reproduce representative reported values under benchmark-specific settings; they are not exhaustive, current, or protocol-unified leaderboard claims.
+The category and signal figures use the 175-resource synthesis set and allow multiple labels. All core records have source-supported signal codes. Structured and time-series evidence is represented separately, including clinical tables and vital-sign sequences. DESPITE is a text/symbolic planning comparator, rather than a sensory multimodal resource. Counts describe the selected collection rather than field-wide prevalence or benchmark quality.
 
-| Benchmark | Year | Evaluation Aspects | Criterion | Reported Model / Performance | Citations (Jul. 2026: total / since 2026) |
-|---|---:|---|---|---|---:|
-| MathVista | 2023 | Math | Accuracy | Seed-2.1-Pro / 90.7 | 1947 / 779 |
-| MATH-Vision | 2024 | Math | Accuracy | GPT-5.4 / 92.0 | 726 / 365 |
-| UrbanVideo-Bench | 2025 | Video, embodied, recall, perception, reasoning, navigation | Avg. Accuracy | Qwen-VL-Max / 45.5 | 52 / 29 |
-| AgentClinic | 2024 | Clinic | Accuracy | Claude-3.5-Sonnet / 62.1 | 256 / 114 |
-| MM-SafetyBench | 2023 | Safety | Refusal Rate | - | 515 / 188 |
-| OmniMedVQA | 2024 | Medical recognition, disease diagnosis, etc. | Accuracy | Fleming-VL-38B / 87.9 | 282 / 135 |
-| ProteinBench | 2024 | Protein, inverse folding, sequence design, etc. | Accuracy, functionality, etc. | ProteinMPNN / - | 32 / 11 |
-| LongVideoBench | 2024 | Video, reasoning | Accuracy | Gemini-2.5-Pro / 77.6 | 651 / 379 |
+### What Representative Benchmarks Establish
+
+The comparison below concerns evaluation evidence. Scores obtained with different tasks, resolutions, temporal access rules, or clinical settings do not share a common reliability scale.
+
+| Benchmark | Evidence targeted | Diagnostic distinction | Remaining reliability question |
+|---|---|---|---|
+| [MMMU-Pro](https://aclanthology.org/2025.acl-long.736/) | Multidisciplinary visual understanding | Filters text-only shortcuts and varies question presentation | Does success persist under new domains and input corruption? |
+| [MME-RealWorld](https://openreview.net/forum?id=k5VHHgsRbi) | High-resolution visual tasks | Tests fine details in application-relevant scenes | Does the result transfer to an operational workflow and its error costs? |
+| [MMEvalPro](https://aclanthology.org/2025.naacl-long.247/) | Calibrated multimodal evaluation | Checks perception prerequisites separately from reasoning | Does a correct answer follow from the intended evidence? |
+| [DAVE](https://doi.org/10.52202/085713-1786) | Audio–visual evidence use | Matched sensory-channel ablations reveal positive or negative gain | Which items require both channels, and with what uncertainty? |
+| [MathVerse](https://doi.org/10.1007/978-3-031-73242-3_10) | Visual mathematical reasoning | Varies textual and diagram information | Does visual dependence hold beyond the tested variants? |
+| [LongVideoBench](https://arxiv.org/abs/2407.15754) | Long-context video understanding | Tests evidence distributed across a supplied sequence | Can the model respond before future frames arrive? |
+| [OVO-Bench](https://arxiv.org/abs/2501.05510) | Online video understanding | Restricts evidence to the temporal setting under evaluation | Are response delay and memory demands acceptable in use? |
+| [AgentClinic](https://doi.org/10.1038/s41746-026-02674-7) | Tool-using clinical interaction | Tests evidence acquisition in simulated encounters | Do clinicians and patients benefit in prospective practice? |
+| [OmniMedVQA](https://arxiv.org/abs/2402.09181) | Medical visual question answering | Covers diverse medical-image questions | Are decisions calibrated across hospitals and patient groups? |
+| [MM-SafetyBench](https://doi.org/10.1007/978-3-031-72992-8_22) | Multimodal safety under attack | Exposes failures that benign accuracy misses | Does refusal preserve useful behavior on benign requests? |
+
+### Worked Fusion-Gain Example
+
+The following values come from **Table 9 of the published DAVE paper**, not new model runs or a current leaderboard. Let A, V, and T denote audio, video, and the common question-and-option text. Define `G = S(A,V,T) − max[S(V,T), S(A,T)]` using accuracy on the same task and model. A single sensory-channel baseline still includes T.
+
+| Model | A+V+T (%) | V+T (%) | A+T (%) | Fusion gain (percentage points) |
+|---|---:|---:|---:|---:|
+| Gemini 2.0 Flash | 50.85 | 37.14 | 23.50 | +13.71 |
+| Gemini 1.5 Flash | 49.51 | 28.60 | 18.04 | +20.91 |
+| video-SALMONN | 17.13 | 21.47 | 15.17 | −4.34 |
+| Video-LLaMA-2 | 31.27 | 33.79 | 7.28 | −2.52 |
+
+Source: [DAVE, NeurIPS 2025, DOI 10.52202/085713-1786](https://doi.org/10.52202/085713-1786), [published PDF, Table 9, p. 30](https://proceedings.nips.cc/paper_files/paper/2025/file/4d5f03fdb238255019826032ae7cc8e2-Paper-Datasets_and_Benchmarks_Track.pdf). Gains are arithmetic differences between reported means. Paired uncertainty estimates cannot be recovered from the published aggregate values alone. Positive gain indicates an advantage from the additional sensory input under that setting; it does not identify the model's internal fusion architecture or establish deployment readiness. Negative gain can indicate interference and calls for further diagnosis.
 
 ### Case Study
 
@@ -82,6 +101,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 
 #### 📷 Single Modality Understanding
 
+- **[MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?](https://openreview.net/forum?id=k5VHHgsRbi)** (*2025*) `ICLR`
 - **[Measuring Massive Multitask Language Understanding](https://arxiv.org/abs/2009.03300)** (*2021*) `ICLR`
 - **[MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574)** (*2024*) `NeurIPS`
 - **[CMMLU: Measuring Massive Multitask Language Understanding in Chinese](https://aclanthology.org/2024.findings-acl.671/)** (*2024*) `ACL Findings`
@@ -97,7 +117,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[MLLM-CompBench: A Comparative Reasoning Benchmark for Multimodal LLMs](https://arxiv.org/abs/2407.16837)** (*2024*) `NeurIPS`
 - **[Evaluating MLLMs with Multimodal Multi-Image Reasoning Benchmark (MMRB)](https://arxiv.org/abs/2506.04280)** (*2025*) `arXiv`
 - **[LENS: Multi-Level Evaluation of Multimodal Reasoning with Large Language Models](https://arxiv.org/abs/2505.15616)** (*2025*) `arXiv`
-- **[MMR-Bench: A Comprehensive Benchmark for Multimodal LLM Routing](https://arxiv.org/abs/2601.17814)** (*2026*) `arXiv`
+- **[MMR-Bench: A Comprehensive Benchmark for Multimodal LLM Routing](https://doi.org/10.1007/978-3-032-37083-9_34)** (*2026*) `ECCV`
 - **[WorldBench: A Challenging and Visually Diverse Multimodal Reasoning Benchmark](https://arxiv.org/abs/2606.06538)** (*2026*) `arXiv`
 - **[Seeing Is Believing? A Benchmark for Multimodal Large Language Models on Visual Illusions and Anomalies (VIA-Bench)](https://arxiv.org/abs/2602.01816)** (*2026*) `arXiv`
 - **[VRB: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education](https://arxiv.org/abs/2602.12196)** (*2026*) `arXiv`
@@ -127,6 +147,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 
 #### 💡 Multimodal Reasoning
 
+- **[MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark](https://aclanthology.org/2025.acl-long.736/)** (*2025*) `ACL`
 - **[CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning](https://arxiv.org/abs/1612.06890)** (*2017*) `CVPR`
 - **[A-OKVQA: A Benchmark for Visual Question Answering Using World Knowledge](https://arxiv.org/abs/2206.01718)** (*2022*) `ECCV`
 - **[ScienceQA: Learn to Explain Multimodal Reasoning via Chain-of-Thought](https://arxiv.org/abs/2209.09513)** (*2022*) `NeurIPS`
@@ -148,7 +169,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[EchoInk-R1: Exploring Audio-Visual Reasoning in Multimodal LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.04623)** (*2025*) `arXiv`
 - **[Exploring the Effect of Reinforcement Learning on Video Understanding: Insights from SEED-Bench-R1](https://arxiv.org/abs/2503.24376)** (*2025*) `arXiv`
 - **[Reason-RFT: Reinforcement Fine-Tuning for Visual Reasoning of Vision Language Models](https://arxiv.org/abs/2503.20752)** (*2025*) `NeurIPS`
-- **[MIRAGE: Assessing Hallucination in Multimodal Reasoning Chains of MLLM](https://arxiv.org/abs/2505.24238)** (*2025*) `arXiv`
+- **[MIRAGE: Assessing Hallucination in Multimodal Reasoning Chains of MLLM](https://doi.org/10.52202/085713-4099)** (*2025*) `NeurIPS`
 - **[MIHBench: Benchmarking and Mitigating Multi-Image Hallucinations in Multimodal Large Language Models](https://doi.org/10.1145/3746027.3754993)** (*2025*) `ACM MM`
 - **[MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue](https://arxiv.org/abs/2606.00622)** (*2026*) `arXiv`
 
@@ -165,7 +186,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[STAR: A Benchmark for Situated Reasoning in Real-World Videos](https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/5ef059938ba799aaa845e1c2e8a762bd-Abstract-round2.html)** (*2021*) `NeurIPS Datasets and Benchmarks`
 - **[V-STaR: Benchmarking Video-LLMs on Video Spatio-Temporal Reasoning](https://arxiv.org/abs/2503.11495)** (*2026*) `CVPR`
 - **[AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension](https://aclanthology.org/2024.acl-long.109/)** (*2024*) `ACL`
-- **[DAVE: Diagnostic Benchmark for Audio Visual Evaluation](https://arxiv.org/abs/2503.09321)** (*2025*) `NeurIPS Datasets and Benchmarks`
+- **[DAVE: Diagnostic Benchmark for Audio Visual Evaluation](https://doi.org/10.52202/085713-1786)** (*2025*) `NeurIPS Datasets and Benchmarks`
 - **[TempCompass: Do Video LLMs Really Understand Videos?](https://aclanthology.org/2024.findings-acl.517/)** (*2024*) `ACL Findings`
 - **[OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?](https://arxiv.org/abs/2501.05510)** (*2025*) `CVPR`
 - **[AutoEval-Video: An Automatic Benchmark for Assessing Large Vision Language Models in Open-Ended Video Question Answering](https://arxiv.org/abs/2311.14906)** (*2024*) `ECCV`
@@ -178,9 +199,9 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[LEMON: How Well Do MLLMs Perform Temporal Multimodal Understanding on Instructional Videos?](https://arxiv.org/abs/2601.20705)** (*2026*) `arXiv`
 - **[Q-Fold: Query-Aware Focus-Context Spatio-Temporal Folding for Long Video Understanding](https://arxiv.org/abs/2606.12125)** (*2026*) `arXiv`
 - **[VSTAT: Benchmarking Visual State Tracking in Multimodal Video Understanding](https://arxiv.org/abs/2606.03920)** (*2026*) `arXiv`
-- **[OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs](https://arxiv.org/abs/2606.03890)** (*2026*) `arXiv`
+- **[OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs](https://aclanthology.org/2026.emnlp-main.2374/)** (*2026*) `EMNLP`
 - **[Streaming Interventions: Can Video Large Language Models Correct Mistakes as They Occur?](https://arxiv.org/abs/2606.09547)** (*2026*) `arXiv`
-- **[PaSBench-Video: A Streaming Video Benchmark for Proactive Safety Warning](https://arxiv.org/abs/2606.02443)** (*2026*) `arXiv`
+- **[PaSBench-Video: A Streaming Video Benchmark for Proactive Safety Warning](https://aclanthology.org/2026.emnlp-main.1881/)** (*2026*) `EMNLP`
 
 #### 📋 Complex Decision-Making and Planning
 
@@ -189,7 +210,7 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[MuEP: A Multimodal Benchmark for Embodied Planning with Foundation Models](https://www.ijcai.org/proceedings/2024/15)** (*2024*) `IJCAI`
 - **[MFE-ETP: A Comprehensive Evaluation Benchmark for Multi-Modal Foundation Models on Embodied Task Planning](https://arxiv.org/abs/2407.05047)** (*2024*) `arXiv`
 - **[EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents](https://arxiv.org/abs/2502.09560)** (*2025*) `arXiv`
-- **[RoboBench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain](https://arxiv.org/abs/2510.17801)** (*2025*) `arXiv`
+- **[RoboBench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain](https://doi.org/10.1007/978-3-032-37517-9_28)** (*2026*) `ECCV`
 - **[EgoPlan-Bench: Benchmarking Multimodal Large Language Models for Human-Level Planning](https://doi.org/10.1007/s11263-025-02676-0)** (*2026*) `IJCV`
 - **[EgoPlan-Bench2: A Benchmark for Multimodal Large Language Model Planning in Real-World Scenarios](https://doi.org/10.1007/s11263-026-02826-y)** (*2026*) `IJCV`
 - **[MPCC: A Novel Benchmark for Multimodal Planning with Complex Constraints in Multimodal Large Language Models](https://doi.org/10.1145/3746027.3755790)** (*2025*) `ACM MM`
@@ -238,12 +259,20 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[CrossMed: A Multimodal Cross-Task Benchmark for Compositional Generalization in Medical Imaging](https://doi.org/10.1109/bhi67747.2025.11269541)** (*2025*) `IEEE BHI`
 - **[Med-RewardBench: Benchmarking Reward Models and Judges for Medical Multimodal Large Language Models](https://arxiv.org/abs/2508.21430)** (*2025*) `arXiv`
 - **[KorMedMCQA-V: A Multimodal Benchmark for Evaluating Vision-Language Models on the Korean Medical Licensing Examination](https://arxiv.org/abs/2602.13650)** (*2026*) `arXiv`
-- **[MMBU: A Massive Multi-modal Biomedical Understanding Benchmark to Probe the Perception Capabilities of Vision-Language Models](https://arxiv.org/abs/2606.06696)** (*2026*) `arXiv`
+- **[MMBU: A Massive Multi-modal Biomedical Understanding Benchmark to Probe the Perception Capabilities of Vision-Language Models](https://doi.org/10.1007/978-3-032-37556-8_32)** (*2026*) `ECCV`
 - **[Benchmarking Foundation Models with Multimodal Public Electronic Health Records (EHR-Bench)](https://doi.org/10.1109/jbhi.2025.3645076)** (*2025*) `IEEE JBHI`
 - **[Hallucination-Aware Multimodal Benchmark for Gastrointestinal Image Analysis with Large Vision-Language Models (Gut-VLM)](https://doi.org/10.1007/978-3-032-05127-1_23)** (*2025*) `MICCAI`
 - **[CardioLens: Revealing the Clinical Reality Gap of MLLMs via Multi-Sequence Cardiac MRI Evaluations](https://arxiv.org/abs/2606.00123)** (*2026*) `arXiv`
 - **[NutriMLLM: Multimodal Large Language Models for Dietary Micronutrient Analysis](https://arxiv.org/abs/2606.08948)** (*2026*) `arXiv`
-- **[BreastGPT: A Multimodal Large Language Model for the Full Spectrum of Breast Cancer Clinical Routine](https://arxiv.org/abs/2606.04911)** (*2026*) `arXiv`
+- **[BreastGPT: A Multimodal Large Language Model for the Full Spectrum of Breast Cancer Clinical Routine](https://aclanthology.org/2026.emnlp-main.740/)** (*2026*) `EMNLP`
+
+#### Clinical Evaluation Guidance and Background
+
+These sources concern clinical evidence and reporting; they are not benchmark datasets. Clinical VQA scores establish task performance under a specified test setting. They do not by themselves establish public-health benefit, clinical utility, or regulatory authorization. For a defined clinical use, external and prospective evaluation should examine subgroup errors, calibration, clinician–model performance, workflow burden, and consequential outcomes.
+
+- **[Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI](https://doi.org/10.1038/s41591-022-01772-9)** (*2022*) `Nature Medicine` — reporting guidance for early clinical evaluation, including the clinical setting and human factors.
+- **[Software as a Medical Device (SaMD): Clinical Evaluation](https://www.imdrf.org/documents/software-medical-device-samd-clinical-evaluation)** (*2017*) `IMDRF` — separates valid clinical association, analytical validation, and clinical validation; applicability depends on the system's intended use.
+- **[Large Language Model Benchmarks in Medical Tasks](https://doi.org/10.1002/med4.70085)** (*2026*) `Medicine Advances` — contextual survey of medical evaluation resources.
 
 #### 🧬 Biological Applications
 
@@ -287,12 +316,18 @@ The current manuscript includes a Qwen-2.5-Omni case study to show how one omni-
 - **[AgriChat: A Multimodal Large Language Model for Agriculture Image Understanding](https://arxiv.org/abs/2603.16934)** (*2026*) `arXiv`
 - **[AgroTools: A Benchmark for Tool-Augmented Multimodal Agents in Agriculture](https://arxiv.org/abs/2605.22366)** (*2026*) `arXiv`
 - **[VizWiz Grand Challenge: Answering Visual Questions from Blind People](https://openaccess.thecvf.com/content_cvpr_2018/html/Gurari_VizWiz_Grand_Challenge_CVPR_2018_paper.html)** (*2018*) `CVPR`
-- **[Vision-Braille: A Curriculum Learning Toolkit and Braille-Chinese Corpus for Braille Translation](https://arxiv.org/abs/2407.06048)** (*2026*) `arXiv`
+- **[Vision-Braille: A Curriculum Learning Toolkit and Braille-Chinese Corpus for Braille Translation](https://aclanthology.org/2026.emnlp-main.2624/)** (*2026*) `EMNLP`
 - **[SLU-2K: A Question-Based Benchmark for Semantic Evaluation of Sign Language Translation](https://arxiv.org/abs/2606.03788)** (*2026*) `arXiv`
 
 ## 🚧 Emerging Directions
 
-The manuscript highlights several directions where evaluation practice still needs stronger benchmarks and protocols:
+The manuscript prioritizes three connected problems. Safety-critical applications may need evidence on all three at once.
+
+1. **Establish what the score measures.** Control contamination and unimodal shortcuts, test perception prerequisites, and pin prompts and scoring rules. Assess progress with matched fusion gain, errors conditional on perceptual success, refreshed held-out items, and agreement with blinded human judgments.
+2. **Test whether the evidence survives change.** Evaluate shifts in source, language, population, modality availability, and time. Report worst-group performance, calibration or selective risk, safety violations, and accuracy at a specified latency budget alongside matched clean results.
+3. **Connect diagnostics to consequences in use.** Compare the human–model team with the relevant unaided baseline through expert review, prospective evaluation, and monitoring. Measure consequential errors and task outcomes together with workload, cost, and response time; define domain-specific acceptance criteria before evaluation.
+
+The following lines of work develop these priorities:
 
 - **Multilingual multimodal evaluation**: [PM4Bench](https://arxiv.org/abs/2503.18484), [M4U](https://openaccess.thecvf.com/content/WACV2026/papers/Wang_M4U_Evaluating_Multilingual_Understanding_and_Reasoning_for_Large_Multimodal_Models_WACV_2026_paper.pdf), [M5](https://aclanthology.org/2024.findings-emnlp.250/), and [xGQA](https://aclanthology.org/2022.findings-acl.196/) show that language ability, OCR, culture, and safety are difficult to disentangle.
 - **Interactive and embodied benchmarks**: [AVLEN](https://doi.org/10.52202/068431-0451), [ELBA](https://openaccess.thecvf.com/content/WACV2025/html/Shen_ELBA_Learning_by_Asking_for_Embodied_Visual_Navigation_and_Task_WACV_2025_paper.html), [LEO](https://proceedings.mlr.press/v235/huang24ae.html), and [3DLLM-Mem](https://proceedings.neurips.cc/paper_files/paper/2025/hash/61f527a737e4ba61f3e10d6c3f0c4b55-Abstract-Conference.html) move evaluation toward feedback, memory, and embodied action.
